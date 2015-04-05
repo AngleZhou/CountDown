@@ -47,8 +47,8 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     //play sound, display a message
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"计时结束" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil, nil];
-    [alertView show];
+//    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"计时结束" delegate:self cancelButtonTitle:@"好" otherButtonTitles:nil, nil];
+//    [alertView show];
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"tap" ofType:@"aif"];
     NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:filePath];

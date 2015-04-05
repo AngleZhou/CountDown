@@ -10,7 +10,8 @@
 
 @interface ViewController : UIViewController
 @property (weak) NSTimer *timer;
-@property (weak, nonatomic) IBOutlet UILabel *countDownLabel;
+@property (weak, nonatomic) IBOutlet UILabel *secondLabel;
+@property (weak, nonatomic) IBOutlet UITextField *miniteTextField;
 
 
 @end

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7C368A231ACD7D920024FE90 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C368A221ACD7D920024FE90 /* AVFoundation.framework */; };
 		7C368A271ACD818F0024FE90 /* tap.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7C368A241ACD7F520024FE90 /* tap.aif */; };
+		7C368A5B1AD143A20024FE90 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C368A5A1AD143A20024FE90 /* AudioToolbox.framework */; };
 		7CA2604C1AB3D6CA009FB69B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2604B1AB3D6CA009FB69B /* main.m */; };
 		7CA2604F1AB3D6CA009FB69B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2604E1AB3D6CA009FB69B /* AppDelegate.m */; };
 		7CA260521AB3D6CA009FB69B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA260511AB3D6CA009FB69B /* ViewController.m */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		7C368A221ACD7D920024FE90 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7C368A241ACD7F520024FE90 /* tap.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = tap.aif; sourceTree = "<group>"; };
+		7C368A5A1AD143A20024FE90 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		7CA260461AB3D6CA009FB69B /* CounterDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounterDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA2604A1AB3D6CA009FB69B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CA2604B1AB3D6CA009FB69B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C368A5B1AD143A20024FE90 /* AudioToolbox.framework in Frameworks */,
 				7C368A231ACD7D920024FE90 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +71,7 @@
 		7CA2603D1AB3D6CA009FB69B = {
 			isa = PBXGroup;
 			children = (
+				7C368A5A1AD143A20024FE90 /* AudioToolbox.framework */,
 				7C368A241ACD7F520024FE90 /* tap.aif */,
 				7C368A221ACD7D920024FE90 /* AVFoundation.framework */,
 				7CA260481AB3D6CA009FB69B /* CounterDown */,
