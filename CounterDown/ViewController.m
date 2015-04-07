@@ -15,7 +15,7 @@
 @property (nonatomic) int secondsLeft;
 @property (nonatomic) BOOL isStarted;
 @property (nonatomic) BOOL isRepeated;
-@property (nonatomic) int secondsUserSet;
+@property (nonatomic) int timeUserSet; //in minutes
 
 //@property (nonatomic) UIAlertView *alertView;
 
@@ -24,6 +24,12 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (weak, nonatomic) IBOutlet UIButton *repeatButton;
+@property (weak, nonatomic) IBOutlet UIButton *setFiveMinutesButton;
+@property (weak, nonatomic) IBOutlet UIButton *setTenMinuteButton;
+@property (weak, nonatomic) IBOutlet UIButton *setThirteenMinutesButton;
+
+@property (weak, nonatomic) IBOutlet UIImageView *editImage;
+@property (weak, nonatomic) IBOutlet UIView *editTimeTapView;
 
 @end
 
@@ -35,8 +41,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.tag = 0;
+    self.editTimeTapView.tag = 1;
     self.isStarted = NO;
-    self.miniteTextField.text = [NSString stringWithFormat:@"%02d", INITTIME];
+    self.timeUserSet = (int)[[NSUserDefaults standardUserDefaults] integerForKey:@"timeUserSet"];
+    if (!self.timeUserSet) {
+        self.timeUserSet = INITTIME;
+    }
+    self.miniteTextField.text = [NSString stringWithFormat:@"%02d", self.timeUserSet];
     
     [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationWillResignActiveNotification
                                                       object:nil
@@ -63,6 +75,21 @@
     self.repeatButton.clipsToBounds = YES;
     self.repeatButton.layer.borderWidth = 2.0;
     self.repeatButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.setFiveMinutesButton.layer.cornerRadius = self.setFiveMinutesButton.bounds.size.width / 2.0;
+    self.setFiveMinutesButton.clipsToBounds = YES;
+    self.setFiveMinutesButton.layer.borderWidth = 1.0;
+    self.setFiveMinutesButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.setTenMinuteButton.layer.cornerRadius = self.setTenMinuteButton.bounds.size.width / 2.0;
+    self.setTenMinuteButton.clipsToBounds = YES;
+    self.setTenMinuteButton.layer.borderWidth = 1.0;
+    self.setTenMinuteButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.setThirteenMinutesButton.layer.cornerRadius = self.setThirteenMinutesButton.bounds.size.width / 2.0;
+    self.setThirteenMinutesButton.clipsToBounds = YES;
+    self.setThirteenMinutesButton.layer.borderWidth = 1.0;
+    self.setThirteenMinutesButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    
+//    UIGestureRecognizer *signleTap = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(editTime:)];
+//    [self.secondLabel]
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -80,15 +107,18 @@
         //disable repeat button
         [self.repeatButton setEnabled:NO];
         [self.repeatButton setAlpha:0.5];
+        //hide edit image
+        [self.editImage setHidden:YES];
         
-        //set timer and label
-        int timeInterval = [self.miniteTextField.text intValue];
-        self.secondsLeft = timeInterval * 60;
-        self.secondsUserSet = timeInterval * 60;
-        self.minutes = timeInterval;
-        self.seconds = 0;
+        //set timer
+        self.timeUserSet = [self.miniteTextField.text intValue];
+        self.secondsLeft = self.timeUserSet * 60;
         [self scheduleLocalNotificationAfter:self.secondsLeft Repeat:self.isRepeated];
         [self countdownTimer];
+        
+        //save timeUserSet
+        [[NSUserDefaults standardUserDefaults] setInteger:self.timeUserSet forKey:@"timeUserSet"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     
     //Cancel Timer
     } else {
@@ -101,8 +131,11 @@
         //enable repeat button
         [self.repeatButton setEnabled:YES];
         [self.repeatButton setAlpha:1.0];
+        //show edit image
+        [self.editImage setHidden:NO];
+        
         //reset countdown label
-        self.miniteTextField.text = [NSString stringWithFormat:@"%02d", INITTIME];
+        self.miniteTextField.text = [NSString stringWithFormat:@"%02d", self.timeUserSet];
         self.secondLabel.text = [NSString stringWithFormat:@":00"];
         
         //cancel timer
@@ -123,6 +156,26 @@
     }
 }
 
+- (IBAction)editTime:(UITapGestureRecognizer *)sender {
+    if (sender.view == self.editTimeTapView) {
+        [self.miniteTextField becomeFirstResponder];
+    }
+}
+- (IBAction)exitEditing:(UITapGestureRecognizer *)sender {
+    [self.miniteTextField resignFirstResponder];
+}
+
+- (IBAction)setTimeButtonTapped:(UIButton *)sender {
+    if (sender == self.setFiveMinutesButton) {
+        self.miniteTextField.text = [NSString stringWithFormat:@"05"];
+    }
+    if (sender == self.setTenMinuteButton) {
+        self.miniteTextField.text = [NSString stringWithFormat:@"10"];
+    }
+    if (sender == self.setThirteenMinutesButton) {
+        self.miniteTextField.text = [NSString stringWithFormat:@"30"];
+    }
+}
 
 #pragma mark - TextField delegate
 
@@ -130,8 +183,21 @@
     if (self.isStarted) {
         return NO;
     }
+    [self.editImage setHidden:YES];
     return YES;
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.miniteTextField resignFirstResponder];
+//    [self.editImage setHidden:NO];
+    return YES;
+}
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    [self.editImage setHidden:NO];
+    return YES;
+}
+
 
 
 #pragma mark - Timer
@@ -154,10 +220,11 @@
         self.secondLabel.text = [NSString stringWithFormat:@":%02d", self.seconds];
     } else if (self.secondsLeft == 0) {
         if (self.isRepeated) {
-            self.secondsLeft = self.secondsUserSet;
+            self.secondsLeft = self.timeUserSet * 60;
         } else {
             self.secondsLeft--;
             [self.startButton setTitle:@"开始" forState:normal];
+            [self.editImage setHidden:NO];
         }
         
     }
