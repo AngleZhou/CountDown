@@ -19,6 +19,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:[NSDate date]];
+    
+    NSDateComponents *dateComponets = [[NSDateComponents alloc] init];
+    dateComponets.weekday = 2;
+    dateComponets.hour = components.hour;
+    dateComponets.minute = components.minute;
+    dateComponets.timeZone = [NSTimeZone defaultTimeZone];
+    NSDate *date = [[NSCalendar currentCalendar] dateFromComponents:dateComponets];
+    NSLog(@"%@", [date descriptionWithLocale:[NSLocale currentLocale]]);
+    
     return YES;
 }
 

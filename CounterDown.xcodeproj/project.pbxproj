@@ -10,6 +10,12 @@
 		7C368A231ACD7D920024FE90 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C368A221ACD7D920024FE90 /* AVFoundation.framework */; };
 		7C368A271ACD818F0024FE90 /* tap.aif in Resources */ = {isa = PBXBuildFile; fileRef = 7C368A241ACD7F520024FE90 /* tap.aif */; };
 		7C368A5B1AD143A20024FE90 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C368A5A1AD143A20024FE90 /* AudioToolbox.framework */; };
+		7C368A5E1AD3D2680024FE90 /* AlarmClockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C368A5D1AD3D2680024FE90 /* AlarmClockVC.m */; };
+		7C368A651AD3DA6C0024FE90 /* AlarmClockTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C368A641AD3DA6C0024FE90 /* AlarmClockTableViewCell.m */; };
+		7C368A681AD3DC780024FE90 /* AlarmClock.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7C368A661AD3DC780024FE90 /* AlarmClock.xcdatamodeld */; };
+		7C368A6E1AD3E3080024FE90 /* AlarmClock+Create.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C368A6D1AD3E3080024FE90 /* AlarmClock+Create.m */; };
+		7C368A741AD42A820024FE90 /* AlarmClockDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C368A731AD42A820024FE90 /* AlarmClockDetailVC.m */; };
+		7C368A801AD514630024FE90 /* AlarmClock.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C368A7F1AD514630024FE90 /* AlarmClock.m */; };
 		7CA2604C1AB3D6CA009FB69B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2604B1AB3D6CA009FB69B /* main.m */; };
 		7CA2604F1AB3D6CA009FB69B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA2604E1AB3D6CA009FB69B /* AppDelegate.m */; };
 		7CA260521AB3D6CA009FB69B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA260511AB3D6CA009FB69B /* ViewController.m */; };
@@ -33,6 +39,17 @@
 		7C368A221ACD7D920024FE90 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7C368A241ACD7F520024FE90 /* tap.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = tap.aif; sourceTree = "<group>"; };
 		7C368A5A1AD143A20024FE90 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		7C368A5C1AD3D2680024FE90 /* AlarmClockVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmClockVC.h; sourceTree = "<group>"; };
+		7C368A5D1AD3D2680024FE90 /* AlarmClockVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmClockVC.m; sourceTree = "<group>"; };
+		7C368A631AD3DA6C0024FE90 /* AlarmClockTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmClockTableViewCell.h; sourceTree = "<group>"; };
+		7C368A641AD3DA6C0024FE90 /* AlarmClockTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmClockTableViewCell.m; sourceTree = "<group>"; };
+		7C368A671AD3DC780024FE90 /* AlarmClock.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AlarmClock.xcdatamodel; sourceTree = "<group>"; };
+		7C368A6C1AD3E3080024FE90 /* AlarmClock+Create.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AlarmClock+Create.h"; sourceTree = "<group>"; };
+		7C368A6D1AD3E3080024FE90 /* AlarmClock+Create.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AlarmClock+Create.m"; sourceTree = "<group>"; };
+		7C368A721AD42A820024FE90 /* AlarmClockDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmClockDetailVC.h; sourceTree = "<group>"; };
+		7C368A731AD42A820024FE90 /* AlarmClockDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmClockDetailVC.m; sourceTree = "<group>"; };
+		7C368A7E1AD514630024FE90 /* AlarmClock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmClock.h; sourceTree = "<group>"; };
+		7C368A7F1AD514630024FE90 /* AlarmClock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmClock.m; sourceTree = "<group>"; };
 		7CA260461AB3D6CA009FB69B /* CounterDown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounterDown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA2604A1AB3D6CA009FB69B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CA2604B1AB3D6CA009FB69B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -68,6 +85,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C368A5F1AD3D2710024FE90 /* AlarmClock */ = {
+			isa = PBXGroup;
+			children = (
+				7C368A5C1AD3D2680024FE90 /* AlarmClockVC.h */,
+				7C368A5D1AD3D2680024FE90 /* AlarmClockVC.m */,
+				7C368A661AD3DC780024FE90 /* AlarmClock.xcdatamodeld */,
+				7C368A7E1AD514630024FE90 /* AlarmClock.h */,
+				7C368A7F1AD514630024FE90 /* AlarmClock.m */,
+				7C368A6C1AD3E3080024FE90 /* AlarmClock+Create.h */,
+				7C368A6D1AD3E3080024FE90 /* AlarmClock+Create.m */,
+				7C368A721AD42A820024FE90 /* AlarmClockDetailVC.h */,
+				7C368A731AD42A820024FE90 /* AlarmClockDetailVC.m */,
+				7C368A631AD3DA6C0024FE90 /* AlarmClockTableViewCell.h */,
+				7C368A641AD3DA6C0024FE90 /* AlarmClockTableViewCell.m */,
+			);
+			name = AlarmClock;
+			sourceTree = "<group>";
+		};
 		7CA2603D1AB3D6CA009FB69B = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +127,7 @@
 		7CA260481AB3D6CA009FB69B /* CounterDown */ = {
 			isa = PBXGroup;
 			children = (
+				7C368A5F1AD3D2710024FE90 /* AlarmClock */,
 				7CA2604D1AB3D6CA009FB69B /* AppDelegate.h */,
 				7CA2604E1AB3D6CA009FB69B /* AppDelegate.m */,
 				7CA260501AB3D6CA009FB69B /* ViewController.h */,
@@ -232,8 +268,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CA260521AB3D6CA009FB69B /* ViewController.m in Sources */,
+				7C368A681AD3DC780024FE90 /* AlarmClock.xcdatamodeld in Sources */,
+				7C368A741AD42A820024FE90 /* AlarmClockDetailVC.m in Sources */,
 				7CA2604F1AB3D6CA009FB69B /* AppDelegate.m in Sources */,
+				7C368A6E1AD3E3080024FE90 /* AlarmClock+Create.m in Sources */,
+				7C368A651AD3DA6C0024FE90 /* AlarmClockTableViewCell.m in Sources */,
 				7CA2604C1AB3D6CA009FB69B /* main.m in Sources */,
+				7C368A801AD514630024FE90 /* AlarmClock.m in Sources */,
+				7C368A5E1AD3D2680024FE90 /* AlarmClockVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +478,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7C368A661AD3DC780024FE90 /* AlarmClock.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7C368A671AD3DC780024FE90 /* AlarmClock.xcdatamodel */,
+			);
+			currentVersion = 7C368A671AD3DC780024FE90 /* AlarmClock.xcdatamodel */;
+			path = AlarmClock.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7CA2603E1AB3D6CA009FB69B /* Project object */;
 }

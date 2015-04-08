@@ -169,10 +169,10 @@
             </objects>
             <point key="canvasLocation" x="424" y="-497"/>
         </scene>
-        <!--View Controller-->
+        <!--Alarm ClockVC-->
         <scene sceneID="RxD-pd-hXj">
             <objects>
-                <viewController id="oJG-jh-zvh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Alarm" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oJG-jh-zvh" customClass="AlarmClockVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Div-ow-fff"/>
                         <viewControllerLayoutGuide type="bottom" id="akU-XC-1fi"/>
@@ -185,7 +185,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="195" id="Efq-Nd-bS4">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="195" id="Efq-Nd-bS4" customClass="AlarmClockTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Efq-Nd-bS4" id="HRG-y7-xUQ">
@@ -229,17 +229,53 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="jLX-CR-KCA" kind="show" id="ywU-nV-CuX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="oJG-jh-zvh" id="7Xa-XD-vLK"/>
+                                    <outlet property="delegate" destination="oJG-jh-zvh" id="iEO-nG-TtB"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="tableView" destination="5xr-LF-YKc" id="LeG-0O-IAo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJn-zA-9xU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="677" y="365"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eGs-Qg-o9g">
+            <objects>
+                <viewController id="jLX-CR-KCA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="40U-ly-1CZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="xxm-3I-PtA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y0O-Ws-HJg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4o-l1-G6c">
+                                <rect key="frame" x="0.0" y="59" width="414" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="450112188.68651301">
+                                    <!--2015-04-07 15:09:48 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EYP-ys-cxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1224" y="365"/>
         </scene>
     </scenes>
     <resources>
